@@ -1,0 +1,232 @@
+  .fb-field {
+    position: relative;
+    width: 100%;
+  }
+ 
+  /* extra top padding reserves room for the label once it floats up */
+  .fb-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 16px 8px 16px;
+    /* color: #666A72; */
+    background: #fff;
+    border: 1px solid #ccd0d5;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+ .fb-input:hover{
+    border-color: #666A72;
+ }
+  /* starts centered, looking just like a placeholder */
+  .fb-label {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    max-width: calc(100% - 32px);
+    overflow: hidden;
+     font-size: 16px;
+    white-space: nowrap;
+    color: #1c1e21;
+    pointer-events: none;
+    transition: top 0.15s ease, font-size 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  }
+ 
+  /* --- floats to the top padding area, stays inside the border --- */
+  .fb-input:not(:placeholder-shown) + .fb-label,
+  .fb-input:focus + .fb-label {
+    top: 6px;
+    transform: translateY(0);
+    font-size: 12px !important;
+    color: #737373;
+  }
+ 
+fb-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  height: 44px;
+  padding: 0 24px;
+  background-color: #1877f2;
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+}
+ 
+.fb-btn:hover:not(:disabled) {
+  background-color: #166fe5;
+}
+ 
+.fb-btn:disabled {
+  cursor: default;
+  opacity: 0.9;
+}
+ 
+.disabled {
+  pointer-events: none;
+}
+
+.fb-btn.success {
+  background-color: #42b72a;
+}
+ 
+/* label */
+.fb-btn-label {
+  transition: opacity 0.15s ease;
+}
+ 
+.fb-btn.loading .fb-btn-label,
+.fb-btn.success .fb-btn-label {
+  opacity: 0;
+}
+ 
+/* spinner */
+.fb-spinner {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.6);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+ 
+.fb-spinner {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+  animation: fb-spin 0.7s linear infinite;
+}
+  
+  @keyframes fb-spin {
+    to { transform: translateY(-50%) scale(1) rotate(360deg); }
+  }
+
+  .disabled {
+    pointer-events: none !important;
+    opacity: .9;
+  }
+
+
+  .password-field {
+  position: relative;
+}
+
+.show-password {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  margin: 0;
+
+  background: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  color: #65676b;
+
+  z-index: 5;
+}
+
+.show-password svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.show-password:hover {
+  color: #1c1e21;
+}
+
+/* Remove the blue focus box from the button */
+.show-password:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.show-password:focus-visible {
+  outline: none;
+}
+
+
+.login-error {
+  font-family: Optimistic,system-ui,sans-serif !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 6px;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 12px;
+  padding: 0 4px;
+
+  font-size: 15px;
+  /* font-weight: 545; */
+  line-height: 20px;
+  text-align: right;
+
+  color: #D31130;
+}
+
+.error-icon {
+  flex: 0 0 auto;
+
+  width: 15px;
+  height: 15px;
+
+  margin-top: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1.5px solid #D31130;
+  border-radius: 50%;
+
+  color: #D31130;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.login-error a {
+  color: #0866ff;
+  font-weight: 600;
+  text-decoration: none;
+
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+.login-error a:hover {
+  text-decoration: underline;
+}
+
+.error-color {
+  color: #D31130 !important;
+  border-color:#D31130 !important ;
+}
+
